@@ -11,3 +11,320 @@
  Tags:         single page
  Text Domain:  nexus-noise-child
 */
+
+/************ GLOBAL STYLES ***************/
+@font-face {
+  font-family: 'Gotham Black';
+  src: url('fonts/GOTHAM01.TTF')  format('truetype');
+}
+@font-face {
+  font-family: 'Gotham Bold';
+  src: url('fonts/GOTHAM02.TTF')  format('truetype');
+}
+@font-face {
+  font-family: 'Gotham Medium';
+  src: url('fonts/GOTHAM-M.TTF')  format('truetype');
+}
+@font-face {
+  font-family: 'Gotham Light';
+  src: url('fonts/GOTHAM-L.TTF')  format('truetype');
+}
+
+body{
+  position:relative;
+  font-family: 'Gotham Medium', helvetica, arial, sans-serif;
+}
+
+.slide-green{
+  background-color:#22ff87;
+}
+.slide-blue{
+  background-color:#009deb;
+}
+.slide-yellow{
+  background-color:#ffff0a;
+}
+.forcefullwidth_wrapper_tp_banner, .fullwidthbanner-container {
+  height: 668px!important;
+}
+.tp-caption.LargeTitle{
+  color:#000;
+  font-size:25px;
+  letter-spacing:5px;
+  font-family: 'Gotham Light', helvetica, arial, sans-serif;
+  text-transform:uppercase;
+}
+.tp-caption.ExtraLargeTitle{
+  color:#000;
+  font-size:55px;
+  font-family: 'Gotham Bold', helvetica, arial, sans-serif;
+  letter-spacing:-1px;
+}
+.slideshow .tp-bullets .bullet{
+  width:12px;
+  height:12px;
+  border-radius: 50%;
+  border:2px solid #000;
+  float:left;
+  margin-left:9px;
+  cursor:pointer;
+}
+.slideshow .tp-bullets .bullet.first{
+  margin-left:0;
+}
+.slideshow .tp-bullets .bullet.selected{
+  background:#000;
+}
+
+.btn{
+  display:inline-block;
+  height:82px;
+  font-size:20px;
+  line-height:82px;
+  letter-spacing:13px;
+  text-transform:uppercase;
+  padding:0 53px;
+}
+  .btn-red{
+    border-bottom:5px solid #7e2222;
+    background:#e73d3d;
+    color:#7e2222;
+  }
+  .btn-green{
+    border-bottom:5px solid #19af5e;
+    background:#22ff87;
+    color:#000;
+  }
+
+/************ MAIN NAV ***************/
+header.st-navbar{
+  position:absolute;
+  width:100%;
+  min-height:92px;
+  z-index:100;
+  font-family: 'Gotham Bold', helvetica, arial, sans-serif;
+}
+header.st-navbar.active{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:rgb(255,255,255);
+  background:rgba(255,255,255,0.95);
+}
+  header.st-navbar .container{
+    position:relative;
+  }
+  header.st-navbar .nav-toggle{
+    cursor:pointer;
+    display:block;
+    width:43px;
+    height:43px;
+    position:absolute;
+    top:49px;
+    right:-80px;
+    background-image:url('images/icon-hamburger.png');
+  }
+  header.st-navbar.active .nav-toggle{
+    background-image:url('images/icon-x.png');
+
+  }
+    header.st-navbar nav{
+      display:none;
+    }
+    header.st-navbar.active nav{
+      display:block;
+    }
+  header.st-navbar.active nav .nav-icon{
+    display:block;
+    margin:90px auto 0 auto;
+  }
+  header.st-navbar.active nav ul{
+    list-style:none;
+    padding:53px 0 0 0;
+    margin:0;
+  }
+    header.st-navbar.active nav ul li{
+      margin:65px 0 0 0;
+      padding:0;
+      text-align:center;
+    }
+    header.st-navbar.active nav ul li:first-child{
+      margin-top:0;
+    }
+      header.st-navbar.active nav ul li a{
+        color:#010101;
+        text-transform:uppercase;
+        font-size:42px;
+      }
+
+/************ SECTIONS ***************/
+h2 .standard-text{
+  display:inline-block;
+}
+h2 .o{
+  content:'';
+  display:inline-block;
+  width:21px;
+  height:17px;
+  background-image:url('images/icon-logo-small.png');
+}
+section.home{
+  background:#000;
+  padding:213px 0 135px 0;
+  overflow:visible;
+}
+  section.home:after, section.about:after, section.skills:after{
+    content:'';
+    position:absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 35px 30.5px 0 30.5px;
+    border-color: #000000 transparent transparent transparent;
+    -webkit-transform:rotate(360deg);
+    margin: auto;
+    bottom: -35px;
+    z-index: 100;
+    left: 0;
+    right: 0;
+  }
+  section.home h2{
+    text-align:center;
+    font-size:30px;
+    line-height:32px;
+    text-transform:uppercase;
+    letter-spacing:10px;
+    color:#22ff87;
+    margin:90px 0 0 0;
+  }
+
+section.about{
+  background:#ff4848;
+  padding:166px 0 127px 0;
+  text-align:center;
+  position:relative;
+}
+  section.about:after{
+    border-color: #ff4848 transparent transparent transparent;
+  }
+  section.about h2{
+    color:#7e2222;
+    font-size:42px;
+    line-height:44px;
+    font-family: 'Gotham Bold', helvetica, arial, sans-serif;
+    letter-spacing:-1px;
+    margin:0;
+  }
+  section.about p{
+    color:#fff;
+    font-family: 'Gotham Book', helvetica, arial, sans-serif;
+    font-size:30px;
+    line-height:35px;
+    margin:34px 0 0 0;
+  }
+  section.about h3{
+    color:#fff;
+    margin:43px 0 0 0;
+    font-size:35px;
+    line-height:37px;
+    letter-spacing:-1px;
+  }
+  section.about .btn-red{
+    margin:68px auto 0 auto;
+  }
+
+section.skills{
+  background:#ffff0a;
+  text-align:center;
+  position:relative;
+  padding:140px 0 155px 0;
+}
+  section.skills:after{
+    border-color: #ffff0a transparent transparent transparent;
+  }
+  section.skills h2{
+    display:inline-block;
+    color:#000;
+    font-family: 'Gotham Black', helvetica, arial, sans-serif;
+    font-size:25px;
+    line-height:27px;
+    letter-spacing:17px;
+    text-transform:uppercase;
+    position:relative;
+  }
+    section.skills h2 .o{
+    }
+  section.skills h3{
+    font-family: 'Gotham Bold', helvetica, arial, sans-serif;
+    height:99px;
+    width:100%;
+    margin:63px 0 0 0;
+    border:3px solid #000;
+    font-size:25px;
+    line-height:99px;
+    color:#000;
+    text-transform:uppercase;
+    letter-spacing:15px;
+  }
+  section.skills ul{
+    margin:50px 0 0 0;
+    padding:0;
+    list-style:none;
+  }
+  section.skills ul li{
+    font-size:25px;
+    line-height:27px;
+    color:#000;
+    margin:19px 0 0 0;
+    padding:0;
+  }
+  section.skills ul li:first-child{
+    margin-top:0;
+  }
+section.work{
+  background:#22ff87;
+  text-align:center;
+  padding:140px 0 155px 0;
+}
+  section.work h2{
+    font-family: 'Gotham Black', helvetica, arial, sans-serif;
+    color:#000;
+    font-size:25px;
+    line-height:27px;
+    letter-spacing:17px;
+    text-transform:uppercase;
+  }
+    section.work h2 .o{
+      margin-right:20px;
+    }
+  section.work .project{
+    height:174px;
+    width:100%;
+    background:rgba(0,0,0,0.2);
+    margin-top:39px;
+  }
+
+section.contact{
+  background:#000;
+  text-align:center;
+  padding:211px 0 142px 0;
+}
+  section.contact .btn{
+    font-family: 'Gotham Bold', helvetica, arial, sans-serif;
+    font-size:25px;
+  }
+  section.contact .badge-icon{
+    display:block;
+    margin:80px auto 0 auto;
+  }
+
+
+
+
+
+
+
+
+
+
+
