@@ -1,20 +1,4 @@
 <?php get_header(); ?>
-<body data-spy="scroll" data-target=".main-nav">
-
-	<header class="st-navbar">
-		<div class="container">
-			<div class="nav-toggle"></div>
-			<nav>
-				<img src="<?php echo child_template_directory ?>/images/icon-nav.png" class="nav-icon" alt="Main Menu" />
-				<ul>
-					<li><a class="internal" href="mantra">Mantra</a></li>
-					<li><a class="internal" href="services">Services</a></li>
-					<li><a href="">Work</a></li>
-					<li><a href="">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
 		
 	<section class="home">
 		<div class="container">
@@ -92,24 +76,20 @@
 		<div class="container">
 			<h2><span class="standard-text">Our W</span><span class="o"></span><span class="standard-text">rk</span></h2>
 			<div class="row">
-				<div class="col-md-4">
-					<div class="project"></div>
-				</div>
-				<div class="col-md-4">
-					<div class="project"></div>
-				</div>
-				<div class="col-md-4">
-					<div class="project"></div>
-				</div>
-				<div class="col-md-4">
-					<div class="project"></div>
-				</div>
-				<div class="col-md-4">
-					<div class="project"></div>
-				</div>
-				<div class="col-md-4">
-					<div class="project"></div>
-				</div>
+				<?php 
+					$projects = get_pages(array('child_of' => 32));
+					foreach( $projects as $project ) {
+				?>
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="project">
+							<a href="<?php echo get_page_link( $project->ID ); ?>">
+								<?php if( get_field('thumbnail_image', $project->ID) ): ?>
+									<img src="<?php the_field('thumbnail_image', $project->ID); ?>" alt="<?php echo $project->post_title; ?>" />
+								<?php endif; ?>
+							</a>
+						</div>
+					</div>
+				<?php } ?>
 			</div>
 		</div>
 	</section>
@@ -121,20 +101,4 @@
 		</div>
 	</section>
 
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.easing.min.js"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.appear.js"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.nicescroll.min.js"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.countTo.js"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.shuffle.modernizr.js"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.shuffle.js"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/owl.carousel.js"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.ajaxchimp.min.js"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/revslider.js"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/script.js"></script>
-		<script src="<?php echo child_template_directory; ?>/js/application.js"></script>
-	</body>
-</html>
+<?php get_footer(); ?>

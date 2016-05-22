@@ -62,5 +62,15 @@ $(document).ready(function(){
     $('header.st-navbar').removeClass('active');
     console.log($('#' + $(this).attr('href')));
     $('html,body').animate({scrollTop: $('#' + $(this).attr('href')).offset().top + 5},'slow');
-  })
+  });
+  if($('.media-wrapper').length){
+    $('.toggle').on('click', function(e){
+      e.preventDefault();
+      if(!$(this).hasClass('active')){
+        $('.media-wrap, .toggle').removeClass('active');
+        $(this).addClass('active');
+        $('.media-wrap.'+$(this).attr('media')+'-wrapper').addClass('active');
+      }
+    });
+  }
 });

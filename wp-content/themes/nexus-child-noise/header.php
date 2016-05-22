@@ -15,3 +15,19 @@
     <script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
     <![endif]-->
   </head>
+  <body>
+
+    <header class="st-navbar">
+        <div class="container">
+            <div class="nav-toggle"></div>
+            <nav>
+                <img src="<?php echo child_template_directory ?>/images/icon-nav.png" class="nav-icon" alt="Main Menu" />
+                <ul>
+                    <li><a <?php if(is_home()): ?>class="internal" href="mantra"<?php else: ?>href="/#mantra"<?php endif; ?>>Mantra</a></li>
+                    <li><a <?php if(is_home()): ?>class="internal" href="services"<?php else: ?>href="/#services"<?php endif; ?>>Services</a></li>
+                    <li><a href="/work">Work</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
