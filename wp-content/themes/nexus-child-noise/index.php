@@ -7,10 +7,10 @@
 			<nav>
 				<img src="<?php echo child_template_directory ?>/images/icon-nav.png" class="nav-icon" alt="Main Menu" />
 				<ul>
-					<li><a href="#home">Mantra</a></li>
-					<li><a href="#about">Services</a></li>
-					<li><a href="#service">Work</a></li>
-					<li><a href="#portfolio">Contact</a></li>
+					<li><a class="internal" href="mantra">Mantra</a></li>
+					<li><a class="internal" href="services">Services</a></li>
+					<li><a href="">Work</a></li>
+					<li><a href="">Contact</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -18,7 +18,7 @@
 		
 	<section class="home">
 		<div class="container">
-			<h1><img src="<?php echo child_template_directory ?>/images/logo.png" class="nav-icon" alt="NOISE" /></h1>
+			<h1><img src="<?php echo child_template_directory ?>/images/logo.png" class="logo" alt="NOISE" /></h1>
 			<h2>Presentation + Info Design</h2>
 		</div>
 	</section>
@@ -60,11 +60,11 @@
 			<h2>We are visual storytellers.</h2>
 			<p>we give your presentations power;<br />interactivate your information;<br />and champion your content.</p>
 			<h3>We make your story cut thru.</h3>
-			<a class="btn btn-red" href="#">See Our Work</a>
+			<a class="btn btn-red internal" href="work">See Our Work</a>
 		</div>
 	</section>
 
-	<section class="skills">
+	<section class="skills" id="services">
 		<div class="container">
 			<h2><span class="standard-text">We D</span><span class="o"></span></h2>
 			<div class="row">
@@ -88,7 +88,7 @@
 		</div>
 	</section>
 
-	<section class="work" id="our-work">
+	<section class="work" id="work">
 		<div class="container">
 			<h2><span class="standard-text">Our W</span><span class="o"></span><span class="standard-text">rk</span></h2>
 			<div class="row">

@@ -1,7 +1,4 @@
 $(document).ready(function(){
-  $('.nav-toggle').on('click', function(){
-    $('header.st-navbar').toggleClass('active');
-  });
   $('#nexus-rev-slider').show().revolution({
     dottedOverlay: 'none',
     delay: 5000,
@@ -57,4 +54,13 @@ $(document).ready(function(){
     startWithSlide: 0,
     fullScreenOffsetContainer: ''
   });
+  $('.nav-toggle').on('click', function(){
+    $('header.st-navbar').toggleClass('active');
+  });
+  $('a.internal').on('click', function(e){
+    e.preventDefault();
+    $('header.st-navbar').removeClass('active');
+    console.log($('#' + $(this).attr('href')));
+    $('html,body').animate({scrollTop: $('#' + $(this).attr('href')).offset().top + 5},'slow');
+  })
 });

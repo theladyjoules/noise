@@ -84,15 +84,22 @@ body{
   letter-spacing:13px;
   text-transform:uppercase;
   padding:0 53px;
+  transition:none;
 }
   .btn-red{
     border-bottom:5px solid #7e2222;
     background:#e73d3d;
     color:#7e2222;
   }
+  .btn-red:hover, .btn-red:active, .btn-red:focus, .btn-red:visited{
+    color:#7e2222;
+  }
   .btn-green{
     border-bottom:5px solid #19af5e;
     background:#22ff87;
+    color:#000;
+  }
+  .btn-green:hover, .btn-green:active, .btn-green:focus, .btn-green:visited{
     color:#000;
   }
 
@@ -187,6 +194,9 @@ section.home{
     z-index: 100;
     left: 0;
     right: 0;
+  }
+  section.home .logo{
+    max-width:100%;
   }
   section.home h2{
     text-align:center;
@@ -318,8 +328,16 @@ section.contact{
     margin:80px auto 0 auto;
   }
 
-
-
+@media (max-width: 1200px) {
+  header.st-navbar .nav-toggle{
+    right:0px;
+  }
+}
+@media (max-width: 890px) {
+  header.st-navbar .nav-toggle{
+    right:34px;
+  }
+}
 
 
 
