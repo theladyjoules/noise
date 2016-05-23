@@ -21,11 +21,13 @@
         <div class="container">
             <div class="nav-toggle"></div>
             <nav>
-                <img src="<?php echo child_template_directory ?>/images/icon-nav.png" class="nav-icon" alt="Main Menu" />
+                <a href="/">
+                    <img src="<?php echo child_template_directory ?>/images/icon-nav.png" class="nav-icon" alt="Main Menu" />
+                </a>
                 <ul>
                     <li><a <?php if(is_home()): ?>class="internal" href="mantra"<?php else: ?>href="/#mantra"<?php endif; ?>>Mantra</a></li>
                     <li><a <?php if(is_home()): ?>class="internal" href="services"<?php else: ?>href="/#services"<?php endif; ?>>Services</a></li>
-                    <li><a href="/work">Work</a></li>
+                    <li><a href="/our-work">Work</a></li>
                     <li><a href="/contact">Contact</a></li>
                 </ul>
             </nav>

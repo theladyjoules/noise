@@ -13,6 +13,22 @@ function theme_enqueue_styles() {
   wp_enqueue_style( 'childMainStyle', get_stylesheet_directory_uri() . '/style.css' );
 }
 
+function theme_prefix_setup() {
+  add_theme_support( 'custom-logo', array(
+    'height'      => 145,
+    'width'       => 888,
+    'flex-width' => true,
+    'header-text' => array( 'site-title', 'site-description' ),
+  ) );
+}
+add_action( 'after_setup_theme', 'theme_prefix_setup' );
+
+function nexusnoisechild_the_custom_logo() {
+  if ( function_exists( 'the_custom_logo' ) ) {
+    the_custom_logo();
+  }
+}
+
 function curl($url){
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $url);

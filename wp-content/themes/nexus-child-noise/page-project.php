@@ -30,11 +30,13 @@
     </section>
 
     <section class="project-content">
-        <div class="container">
-          <h1><?php the_title(); ?></h1>
-          <?php the_content(); ?>
-        </div>
-      <a href="" class="btn btn-white">See More</a>
+      <div class="container">
+        <h1><?php the_title(); ?></h1>
+        <?php the_content(); ?>
+      </div>
+      <div class="container cta">
+        <a href="/our-work" class="btn-white btn-large">See More</a>
+      </div>
     </section>
 
   <?php endwhile; // end of the loop. ?>

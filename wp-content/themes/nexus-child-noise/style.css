@@ -9,7 +9,7 @@
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         single page
- Text Domain:  nexus-noise-child
+ Text Domain:  nexusnoisechild
 */
 
 /************ GLOBAL STYLES ***************/
@@ -97,7 +97,7 @@ body{
   background:#000;
 }
 
-.btn, .contact-submit input{
+.btn{
   display:inline-block;
   height:82px;
   font-size:20px;
@@ -106,6 +106,17 @@ body{
   text-transform:uppercase;
   padding:0 53px;
   transition:none;
+}
+.btn-large, .contact-submit input{
+  display:inline-block;
+  font-size:25px;
+  line-height:105px;
+  letter-spacing:18px;
+  height:105px;
+  border-width:6px;
+  font-family: 'Gotham Bold', helvetica, arial, sans-serif;
+  padding:0 66px;
+  text-transform:uppercase;
 }
   .btn-red{
     border-bottom:5px solid #7e2222;
@@ -121,6 +132,14 @@ body{
     color:#000;
   }
   .btn-green:hover, .btn-green:active, .btn-green:focus, .btn-green:visited, .contact-submit input:active, , .contact-submit input:focus{
+    color:#000;
+  }
+  .btn-white{
+    border-bottom:5px solid #6e6e00;
+    background:#fff;
+    color:#000;
+  }
+  .btn-white:hover, .btn-white:active, .btn-white:focus, .btn-white:visited{
     color:#000;
   }
 
@@ -411,14 +430,6 @@ section.contact-form{
       border-top: none;
       border-left: none;
       border-right: none;
-      font-size:25px;
-      line-height:105px;
-      letter-spacing:18px;
-      height:105px;
-      border-width:6px;
-      font-family: 'Gotham Bold', helvetica, arial, sans-serif;
-      padding-left:66px;
-      padding-right:66px;
     }
 
 section.work-hero{
@@ -503,6 +514,34 @@ section.project-hero{
         padding:0 39px 0 45px;
         margin-left:20px;
       }
+section.project-content{
+  background:#ffff0a;
+}
+  section.project-content h1{
+    font-family: 'Gotham Bold', helvetica, arial, sans-serif;
+    color:#000;
+    font-size:60px;
+    line-height:60px;
+    letter-spacing:-2px;
+    margin:83px 0 0 0;
+  }
+  section.project-content p{
+    font-family: 'Gotham Bold', helvetica, arial, sans-serif;
+    font-size:30px;
+    color:#000;
+    line-height:35px;
+    letter-spacing:-1px;
+    margin:25px 0 0 0;
+  }
+  section.project-content .cta{
+    text-align:center;
+    padding:75px 0 112px 0;
+  }
+  section.project-content .btn-large{
+    padding:0 80px 0 100px;
+    border-width:8px;
+  }
+
 /************ RESPONSIVE ***************/
 @media (max-width: 1200px) {
   header.st-navbar .nav-toggle{
