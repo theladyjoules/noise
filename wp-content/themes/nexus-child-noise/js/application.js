@@ -1,7 +1,20 @@
 $(document).ready(function(){
-  $('#nexus-rev-slider').show().revolution({
+  var $allVideos = $('.vimeo-wrapper iframe'),
+  $fluidEl = $('.vimeo-wrapper p');
+  console.log( $allVideos);
+  $allVideos.each(function() {
+    $(this).attr('data-aspectRatio', this.height / this.width).removeAttr('height').removeAttr('width');
+  });
+  $(window).resize(function() {
+    var newWidth = $fluidEl.width();
+    $allVideos.each(function() {
+      var $el = $(this);
+      $el.width(newWidth).height(newWidth * $el.attr('data-aspectRatio'));
+    });
+  }).resize();
+  var opts = {
     dottedOverlay: 'none',
-    delay: 5000,
+    delay: 500000,
     startwidth: 0,
     startheight:500,
 
@@ -39,8 +52,8 @@ $(document).ready(function(){
     shuffle: 'off',
 
     autoHeight: 'on',
-    forceFullWidth: 'off',
-    fullScreenAlignForce: 'off',
+    forceFullWidth: 'on',
+    fullScreenAlignForce: 'on',
     minFullScreenHeight: 0,
     hideNavDelayOnMobile: 1500,
 
@@ -53,14 +66,13 @@ $(document).ready(function(){
     hideAllCaptionAtLilmit: 0,
     startWithSlide: 0,
     fullScreenOffsetContainer: ''
-  });
+  }
   $('.nav-toggle').on('click', function(){
     $('header.st-navbar').toggleClass('active');
   });
   $('a.internal').on('click', function(e){
     e.preventDefault();
     $('header.st-navbar').removeClass('active');
-    console.log($('#' + $(this).attr('href')));
     $('html,body').animate({scrollTop: $('#' + $(this).attr('href')).offset().top + 5},'slow');
   });
   if($('.media-wrapper').length){
@@ -73,4 +85,40 @@ $(document).ready(function(){
       }
     });
   }
+  $(window).on('resize', function(){
+    if(screenSize() != intializedSlider){
+      setSlider(screenSize());
+    }
+  });
+  var intializedSlider, intializedSliders;
+  function initSlider(){
+    intializedSlider = '';
+    intializedSliders = [];
+    setSlider(screenSize());
+  }
+  function setSlider(s){
+    if(intializedSlider != ''){
+      $('.slideshow-'+intializedSlider).hide();
+    }
+    $('.slideshow-'+s).show();
+    $('#nexus-rev-slider-'+s).show();
+    if($.inArray(s, intializedSliders) == -1){
+      $('#nexus-rev-slider-'+s).revolution(opts);
+      intializedSliders.push(s);
+    }
+    intializedSlider = s;
+  }
+  function screenSize(){
+    if($(window).width() > 1024){
+      return 'desktop';
+    }
+    else if($(window).width() < 1024 && $(window).width() > 640){
+      return 'tablet';
+    }
+    else{
+      return 'mobile';
+    }
+  }
+  initSlider();
 });
+

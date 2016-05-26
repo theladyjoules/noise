@@ -1,17 +1,21 @@
 <?php /* Template Name: Project */ ?>
 
 <?php get_header(); ?>
-  <?php while ( have_posts() ) : the_post(); ?>
+  <?php while ( have_posts() ) : 
+    the_post(); 
+    $hasVideo = (get_field('vimeo_embed_code') == '') ? false : true;
+    $hasDeck = (get_field('speaker_deck_url') == '') ? false : true;
+  ?>
 
     <section class="project-hero">
       <div class="container">
-        <div class="media-wrapper">
-          <?php if( get_field('vimeo_embed_code') ): ?>
+        <div class="media-wrapper <?php if($hasVideo == false && $hasDeck == true) echo 'deck-only' ?>">
+          <?php if($hasVideo): ?>
             <div class="media-wrap vimeo-wrapper active">
               <?php if( get_field('vimeo_embed_code') ){ the_field('vimeo_embed_code'); } ?>
             </div>
           <?php endif; ?>
-          <?php if( get_field('speaker_deck_url') ): ?>
+          <?php if($hasDeck): ?>
             <div class="media-wrap deck-wrapper">
             <?php $deck = json_decode(curl('http://speakerdeck.com/oembed.json?url=' . get_field('speaker_deck_url')), true);
             if($deck){
@@ -20,10 +24,16 @@
             </div>
           <?php endif; ?>
         </div>
-        <?php if( get_field('vimeo_embed_code') && get_field('speaker_deck_url')): ?>
+        <?php if($hasVideo && $hasDeck): ?>
           <div class="media-toggle-wrapper">
-            <a class="toggle active" href="" media="vimeo">Video</a>
-            <a class="toggle" href="" media="deck">Click-Thru</a>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <a class="toggle active" href="" media="vimeo">Video</a>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <a class="toggle" href="" media="deck">Click-Thru</a>
+              </div>
+            </div>
           </div>
         <?php endif; ?>
       </div>
